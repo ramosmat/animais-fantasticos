@@ -544,6 +544,30 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.col-start-3 {
+  grid-column-start: 3;
+}
+
+.col-end-5 {
+  grid-column-end: 5;
+}
+
+.m-0 {
+  margin: 0px;
+}
+
+.mb-\[2rem\] {
+  margin-bottom: 2rem;
+}
+
+.mt-\[2rem\] {
+  margin-top: 2rem;
+}
+
+.mr-3 {
+  margin-right: 0.75rem;
+}
+
 .block {
   display: block;
 }
@@ -552,36 +576,81 @@ video {
   display: flex;
 }
 
-.resize {
-  resize: both;
+.grid {
+  display: grid;
 }
 
-.flex-col {
-  flex-direction: column;
+.size-\[0\.875rem\] {
+  width: 0.875rem;
+  height: 0.875rem;
 }
 
-.justify-center {
-  justify-content: center;
+.max-w-full {
+  max-width: 100%;
 }
 
-.justify-between {
-  justify-content: space-between;
+.list-disc {
+  list-style-type: disc;
 }
 
-.border {
-  border-width: 1px;
+.grid-cols-body-grid {
+  grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr;
 }
 
-.border-solid {
-  border-style: solid;
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
-.border-red-500 {
-  --tw-border-opacity: 1;
-  border-color: rgb(239 68 68 / var(--tw-border-opacity));
-}
-
-.bg-gray-500 {
+.bg-\[\#FAF6ED\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+  background-color: rgb(250 246 237 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#FB5\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 187 85 / var(--tw-bg-opacity));
+}
+
+.p-0 {
+  padding: 0px;
+}
+
+.p-3 {
+  padding: 0.75rem;
+}
+
+.font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.text-\[0\.875rem\] {
+  font-size: 0.875rem;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.text-gray-400 {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
+.text-gray-700 {
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
+.text-gray-800 {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
