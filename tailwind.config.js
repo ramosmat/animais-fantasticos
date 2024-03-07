@@ -6,6 +6,7 @@ module.exports = {
       gridTemplateColumns: {
         // Complex site-specific column configuration
         "body-grid": "1fr 120px minmax(300px, 800px) 1fr",
+        "section-grid": "90px 300px 1fr",
       },
     },
   },
