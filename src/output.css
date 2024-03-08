@@ -626,8 +626,16 @@ video {
   margin: 0px;
 }
 
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
 .mb-16 {
   margin-bottom: 4rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
 }
 
 .mb-3 {
@@ -640,6 +648,14 @@ video {
 
 .mb-8 {
   margin-bottom: 2rem;
+}
+
+.ml-1 {
+  margin-left: 0.25rem;
+}
+
+.ml-5 {
+  margin-left: 1.25rem;
 }
 
 .mr-3 {
@@ -730,10 +746,6 @@ video {
   scroll-snap-align: center;
 }
 
-.list-disc {
-  list-style-type: disc;
-}
-
 .grid-cols-body-grid {
   grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr;
 }
@@ -788,6 +800,14 @@ video {
   padding: 0.625rem;
 }
 
+.p-5 {
+  padding: 1.25rem;
+}
+
+.pb-3 {
+  padding-bottom: 0.75rem;
+}
+
 .text-justify {
   text-align: justify;
 }
@@ -802,6 +822,11 @@ video {
 
 .text-8xl {
   font-size: 6rem;
+  line-height: 1;
+}
+
+.text-9xl {
+  font-size: 8rem;
   line-height: 1;
 }
 
@@ -927,6 +952,21 @@ video {
 .before\:w-10::before {
   content: var(--tw-content);
   width: 2.5rem;
+}
+
+.before\:w-2::before {
+  content: var(--tw-content);
+  width: 0.5rem;
+}
+
+.before\:w-2\.5::before {
+  content: var(--tw-content);
+  width: 0.625rem;
+}
+
+.before\:rounded-full::before {
+  content: var(--tw-content);
+  border-radius: 9999px;
 }
 
 .before\:bg-\[\#FB5\]::before {
