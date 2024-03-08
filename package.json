@@ -9,5 +9,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.18"
+  }
 }
