@@ -93,3 +93,82 @@ imagens2.forEach((item) => {
 const link = document.querySelector('a[href^="http"]');
 
 link.setAttribute("href", "https://github.com/ramosmat");
+
+//Verificando propriedades de dimensão e distância
+const section = document.querySelector("#animais ul");
+
+console.log(section.clientHeight); // height + padding
+console.log(section.offsetHeight); // height + padding + border
+console.log(section.scrollHeight); // height total, mesmo dentro de scroll
+
+console.log(section.clientWidth); // Width + padding
+console.log(section.offsetWidth); // Width + padding + border
+console.log(section.scrollWidth); // Width total, mesmo dentro de scroll
+
+const foot = document.querySelector("footer");
+
+// Distância entre o topo do elemento e o topo da página
+console.log(foot.offsetTop);
+
+// Distância entre o canto esquerdo do elemento e o canto esquerdo da página
+console.log(foot.offsetLeft);
+
+const primeiroh2 = document.querySelector("h2");
+
+const rect = primeiroh2.getBoundingClientRect();
+
+console.log(rect); //retorna o elemento com suas propriedades como height, width, distancias entre as paredes da pagina
+
+window.innerWidth; // width do janela
+window.outerWidth; // soma dev tools também
+window.innerHeight; // height do janela
+window.outerHeight; // soma a barra de endereço
+
+window.pageYOffset; // distância total do scroll vertical
+window.pageXOffset; // distância total do scroll horizontal
+
+if (window.innerWidth < 600) {
+  console.log("Tela menor que 600px");
+}
+
+// Verifique a distância da primeira imagem em relação ao topo da página
+const primeiraImg = document.querySelector("img");
+console.log(
+  `A distância da primeira imagem até o topo da tela é ${primeiraImg.offsetTop}`
+);
+
+// Retorne a soma da largura de todas as imagens
+function somaImgs() {
+  let totalImgWidth = 0;
+  imagens2.forEach((img) => {
+    totalImgWidth += img.clientWidth;
+  });
+  console.log(`A soma da largura de todas as imagens é ${totalImgWidth}`);
+}
+
+window.onload = function () {
+  somaImgs();
+};
+
+// Verifique se os links da página possuem o mínimo recomendado para telas utilizadas
+// com o dedo. (48px/48px de acordo com o google)
+let linksDim;
+itensMenu.forEach((item) => {
+  linksDim = item.getBoundingClientRect();
+  if (linksDim.width >= 48 && linksDim.height >= 48) {
+    console.log(item.innerText, "Possui acessibilidade");
+  } else {
+    console.log(item.innerText, "Não possui acessibilidade");
+  }
+});
+
+// Se o browser for menor que 720px, adicione a classe menu-mobile ao menu
+const small = window.matchMedia("(max-width: 720px)");
+const menu = document.querySelector("#menu");
+
+if (small.matches) {
+  console.log("Tela menor que 720px");
+  menu.classList.add("menu-mobile");
+} else {
+  console.log("Tela maior que 720px");
+}
