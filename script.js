@@ -7,8 +7,8 @@ const imgs = document.querySelectorAll('img[src^="img/imagem"]');
 console.log(imgs);
 
 // Selecione todos os links internos (onde o href começa com #)
-const linkInterno = document.querySelectorAll('[href^="#"]');
-console.log(linkInterno);
+const linksInternos = document.querySelectorAll('[href^="#"]');
+console.log("linksInternos", linksInternos);
 
 // Selecione o primeiro h2 dentro de .animais-descricao
 const h2animais = document.querySelector(".animais-descricao h2");
@@ -75,12 +75,12 @@ itensMenu.forEach((item) => {
 
 console.log(itensMenu.classList);
 
-// Remove a classe ativo de todos os itens do menu e mantenha apenas no primeiro
+// Remova a classe ativo de todos os itens do menu e mantenha apenas no primeiro
 itensMenu.forEach((item, index) => {
   item.classList.remove("ativo");
 });
 
-itensMenu[0].classList.add("ativo");
+// itensMenu[0].classList.add("ativo");
 
 // Verifique se as imagens possuem o atributo alt
 const imagens2 = document.querySelectorAll("img");
@@ -90,9 +90,9 @@ imagens2.forEach((item) => {
 });
 
 // Modifique o href do link externo no menu
-const link = document.querySelector('a[href^="http"]');
+const linkDev = document.querySelector('#menu a[href^="http"]');
 
-link.setAttribute("href", "https://github.com/ramosmat");
+linkDev.setAttribute("href", "https://github.com/ramosmat");
 
 //Verificando propriedades de dimensão e distância
 const section = document.querySelector("#animais ul");
@@ -172,3 +172,79 @@ if (small.matches) {
 } else {
   console.log("Tela maior que 720px");
 }
+
+//Adicionando eventos
+function clicou() {
+  window.alert("Clicou");
+}
+
+imagens[0].addEventListener("click", clicou);
+
+//O primeiro parâmetro do callback é referente ao evento que ocorreu, esse evento possui varias
+// propriedades como o target e métodos como o preventDefault()
+function callback(event) {
+  console.log(event);
+  console.log(event.target);
+}
+
+imagens[1].addEventListener("click", callback);
+
+function handleLinkExterno(ev) {
+  console.log(
+    "Evento está funcionando:",
+    ev,
+    "Mas o preventDefault() impede que o link externo seja seguido"
+  );
+  ev.preventDefault();
+}
+
+const linksExternos = document.querySelectorAll(
+  '.animais-descricao a[href^="http"]'
+);
+
+linksExternos[0].addEventListener("click", handleLinkExterno);
+
+// Quando o usuário clicar nos links internos do site, adicione a classe ativo ao item clicado e remova dos
+// demais itens caso eles possuam a mesma. Previna o comportamento padrão desses links
+function handleLinksInternos(event) {
+  // const obj = event.currentTarget;
+  event.preventDefault();
+  linksInternos.forEach((item) => {
+    item.classList.remove("ativo");
+  });
+  event.currentTarget.classList.add("ativo");
+}
+
+linksInternos.forEach((link) => {
+  link.addEventListener("click", handleLinksInternos);
+});
+
+// Selecione todos os elementos do site começando a partir do body,
+// ao clique mostre exatamente quais elementos estão sendo clicados
+const bodyElements = document.querySelectorAll("body *");
+
+bodyElements.forEach((item) => {
+  item.addEventListener("click", (event) => {
+    console.log(event.currentTarget);
+  });
+});
+
+// Utilizando o código anterior, ao invés de mostrar no console,
+// remova o elemento que está sendo clicado, o método remove() remove um elemento
+const bodyElements2 = document.querySelectorAll("body *");
+
+bodyElements2.forEach((item) => {
+  item.addEventListener("click", (event) => {
+    event.currentTarget.remove();
+  });
+});
+
+// Se o usuário clicar na tecla (t), aumente todo o texto do site.
+function handleKeyboard(ev) {
+  console.log(ev.key);
+  if (ev.key == "t") {
+    document.documentElement.classList.toggle("text-6xl");
+  }
+}
+
+window.addEventListener("keydown", handleKeyboard);
