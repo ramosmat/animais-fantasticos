@@ -10,6 +10,15 @@ module.exports = {
         "section-grid": "90px 300px 1fr",
         "section-grid-sm": "100px 1fr",
       },
+      animation: {
+        description: "animal-description-enter 0.5s linear",
+      },
+      keyframes: {
+        "animal-description-enter": {
+          "0%": { transform: "translateX(-1rem)", opacity: 0 },
+          "100%": { transform: "translateX(0rem)", opacity: 100 },
+        },
+      },
     },
     screens: {
       sm: { max: "767px" },
