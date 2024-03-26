@@ -744,6 +744,22 @@ video {
   animation: animal-description-enter 0.5s linear;
 }
 
+@keyframes slideShow {
+  0% {
+    transform: max-height: 0px;
+    opacity: 0;
+  }
+
+  100% {
+    transform: max-height: 200px;
+    opacity: 100;
+  }
+}
+
+.animate-slideShow {
+  animation: slideShow 0.5s;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -991,6 +1007,16 @@ video {
   content: var(--tw-content);
   --tw-bg-opacity: 1;
   background-color: rgb(255 187 85 / var(--tw-bg-opacity));
+}
+
+.after\:content-\[\'\2B0E\'\]::after {
+  --tw-content: '⬎';
+  content: var(--tw-content);
+}
+
+.after\:content-\[\'\2B0F\'\]::after {
+  --tw-content: '⬏';
+  content: var(--tw-content);
 }
 
 @media (max-width: 767px) {
