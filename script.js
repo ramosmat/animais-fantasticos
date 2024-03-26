@@ -1,3 +1,4 @@
+//Adicionando comportamento de deixar a o texto dos animais escondidao, quando clicado na imagem, o texto do animal é exibido
 function initTabNav() {
   const tabMenu = document.querySelectorAll(".js-tabmenu li");
   const tabContent = document.querySelectorAll(".js-tabcontent section");
@@ -23,6 +24,7 @@ function initTabNav() {
   }
 }
 
+//Adicionando comportamento de deixar a descrição escondida, quando clicado no tópico, a descrição é exibida
 function initAccordionList() {
   const accordionList = document.querySelectorAll(".js-accordion dt");
   accordionList[0].nextElementSibling.classList.toggle("block");
@@ -41,5 +43,31 @@ function initAccordionList() {
   });
 }
 
+//Adicionando comportamento de scroll suave para links internos
+function initScrollSuave() {
+  const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
+
+  function scrollToSection(ev) {
+    ev.preventDefault();
+    const href = ev.currentTarget.getAttribute("href");
+    const section = document.querySelector(href);
+    const sectionTop = section.offsetTop;
+
+    // Forma 1
+    // section.scrollIntoView({ behavior: "smooth" });
+
+    // Forma 2
+    window.scrollTo({
+      top: sectionTop,
+      behavior: "smooth",
+    });
+  }
+
+  linksInternos.forEach((link) => {
+    link.addEventListener("click", scrollToSection);
+  });
+}
+
 initTabNav();
 initAccordionList();
+initScrollSuave();
