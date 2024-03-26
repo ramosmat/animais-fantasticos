@@ -744,7 +744,7 @@ video {
   animation: animal-description-enter 0.5s linear;
 }
 
-@keyframes slideShow {
+@keyframes slideDown {
   0% {
     transform: max-height: 0px;
     opacity: 0;
@@ -756,8 +756,24 @@ video {
   }
 }
 
-.animate-slideShow {
-  animation: slideShow 0.5s;
+.animate-slideDown {
+  animation: slideDown 0.5s;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-10rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0rem);
+    opacity: 100;
+  }
+}
+
+.animate-slideLeft {
+  animation: slideLeft 0.5s linear;
 }
 
 .cursor-pointer {
@@ -931,6 +947,10 @@ video {
 .antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.opacity-0 {
+  opacity: 0;
 }
 
 .outline {

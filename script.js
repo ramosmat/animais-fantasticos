@@ -33,7 +33,7 @@ function initAccordionList() {
   function activeAccordion(event) {
     event.currentTarget.nextElementSibling.classList.toggle("block");
     event.currentTarget.nextElementSibling.classList.toggle("hidden");
-    event.currentTarget.nextElementSibling.classList.add("animate-slideShow");
+    event.currentTarget.nextElementSibling.classList.add("animate-slideDown");
     event.currentTarget.classList.toggle("after:content-['⬎']");
     event.currentTarget.classList.toggle("after:content-['⬏']");
   }
@@ -68,6 +68,33 @@ function initScrollSuave() {
   });
 }
 
+function initAnimacaoScroll() {
+  const sections = document.querySelectorAll(".js-scroll");
+
+  if (sections.length) {
+    const windowMetade = window.innerHeight * 0.6;
+
+    function animaScroll() {
+      sections.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const isSectionVisible = sectionTop - windowMetade;
+        if (isSectionVisible < 0) {
+          console.log(section);
+          section.classList.add("block");
+          section.classList.add("grid");
+          section.classList.add("animate-slideLeft");
+          section.classList.remove("opacity-0");
+        }
+      });
+    }
+
+    animaScroll();
+
+    window.addEventListener("scroll", animaScroll);
+  }
+}
+
 initTabNav();
 initAccordionList();
 initScrollSuave();
+initAnimacaoScroll();

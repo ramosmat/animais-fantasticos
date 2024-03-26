@@ -12,16 +12,21 @@ module.exports = {
       },
       animation: {
         description: "animal-description-enter 0.5s linear",
-        slideShow: "slideShow 0.5s",
+        slideDown: "slideDown 0.5s",
+        slideLeft: "slideLeft 0.5s linear",
       },
       keyframes: {
         "animal-description-enter": {
           "0%": { transform: "translateX(-1rem)", opacity: 0 },
           "100%": { transform: "translateX(0rem)", opacity: 100 },
         },
-        slideShow: {
+        slideDown: {
           "0%": { transform: "max-height: 0px", opacity: 0 },
           "100%": { transform: "max-height: 200px", opacity: 100 },
+        },
+        slideLeft: {
+          "0%": { transform: "translateX(-10rem)", opacity: 0 },
+          "100%": { transform: "translateX(0rem)", opacity: 100 },
         },
       },
       screens: {
