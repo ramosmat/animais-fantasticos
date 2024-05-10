@@ -1,14 +1,14 @@
-export default function initFetchBitcoin() {}
+export default function initFetchBitcoin() {
+  fetch("https://blockchain.info/ticker")
+    .then((result) => result.json())
+    .then((bitcoin) => {
+      const btcPreco = document.querySelector(".btc-preco");
 
-fetch("https://blockchain.info/ticker")
-  .then((result) => result.json())
-  .then((bitcoin) => {
-    const btcPreco = document.querySelector(".btc-preco");
+      btcPreco.innerText = (1000 / bitcoin.BRL.sell).toFixed(4);
+    })
+    .catch((erro) => {
+      console.log(Error(erro));
+    });
 
-    btcPreco.innerText = (1000 / bitcoin.BRL.sell).toFixed(4);
-  })
-  .catch((erro) => {
-    console.log(Error(erro));
-  });
-
-// https://blockchain.info/ticker
+  // https://blockchain.info/ticker
+}
