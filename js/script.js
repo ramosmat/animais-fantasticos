@@ -8,7 +8,7 @@ import Tooltip from "./modules/tooltip.js";
 import DropdownMenu from "./modules/dropdown-menu.js";
 import MenuMobile from "./modules/menu-mobile.js";
 // import initAnimaNumeros from "./modules/anima-numeros.js"; //importada na fetchAnimais
-import initFuncionamento from "./modules/date-funcionamento.js";
+import Funcionamento from "./modules/date-funcionamento.js";
 import fetchAnimais from "./modules/fetch-animais.js";
 import fetchBitcoin from "./modules/fetch-bitcoin.js";
 
@@ -43,7 +43,9 @@ dropdownMenu.init();
 const menuMobile = new MenuMobile('[data-menu="button"]', '[data-menu="list"]');
 menuMobile.init();
 
-initFuncionamento();
+const funcionamento = new Funcionamento("[data-semana]", "aberto");
+funcionamento.init();
+console.log(funcionamento);
 
 fetchAnimais("../../animais-api.json", ".numeros-grid");
 fetchBitcoin("https://blockchain.info/ticker", ".btc-preco");
