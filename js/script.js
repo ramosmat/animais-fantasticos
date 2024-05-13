@@ -5,9 +5,9 @@ import TabNav from "./modules/tab-nav.js";
 // import * as modais from "./modules/modal.js";
 import Modal from "./modules/modais.js";
 import Tooltip from "./modules/tooltip.js";
-import initDropDownMenu from "./modules/dropdown-menu.js";
+import DropdownMenu from "./modules/dropdown-menu.js";
 import initMenuMobile from "./modules/menu-mobile.js";
-// import initAnimaNumeros from "./modules/anima-numeros.js";
+// import initAnimaNumeros from "./modules/anima-numeros.js"; //importada na fetchAnimais
 import initFuncionamento from "./modules/date-funcionamento.js";
 import fetchAnimais from "./modules/fetch-animais.js";
 import fetchBitcoin from "./modules/fetch-bitcoin.js";
@@ -37,9 +37,10 @@ tooltip.init();
 const scrollAnima = new ScrollAnima('[data-anime="scroll"]');
 scrollAnima.init();
 
-initDropDownMenu();
+const dropdownMenu = new DropdownMenu("[data-dropdown]");
+dropdownMenu.init();
+
 initMenuMobile();
-// initAnimaNumeros(); ESTÁ SENDO IMPORTADA NO initFetchAnimais
 initFuncionamento();
 
 fetchAnimais("../../animais-api.json", ".numeros-grid");
