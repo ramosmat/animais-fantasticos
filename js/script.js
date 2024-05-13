@@ -4,7 +4,7 @@ import Accordion from "./modules/scroll-accordion.js";
 import TabNav from "./modules/tab-nav.js";
 // import * as modais from "./modules/modal.js";
 import Modal from "./modules/modais.js";
-import initTooltip from "./modules/tooltip.js";
+import Tooltip from "./modules/tooltip.js";
 import initDropDownMenu from "./modules/dropdown-menu.js";
 import initMenuMobile from "./modules/menu-mobile.js";
 // import initAnimaNumeros from "./modules/anima-numeros.js";
@@ -31,8 +31,11 @@ const modal = new Modal(
 );
 modal.init();
 
+const tooltip = new Tooltip("[data-tooltip]");
+tooltip.init();
+
 initAnimacaoScroll();
-initTooltip();
+
 initDropDownMenu();
 initMenuMobile();
 // initAnimaNumeros(); ESTÁ SENDO IMPORTADA NO initFetchAnimais
