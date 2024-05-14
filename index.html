@@ -6,7 +6,7 @@
     <title>Animais Fantásticos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
-      href="https://fonts.googleapis.com/css?family=Playfair+Display+SC"
+      href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:700|Playfair+Display+SC"
       rel="stylesheet"
     />
     <script>
@@ -35,7 +35,9 @@
           <li><a href="#galeria">Galeria</a></li>
           <li><a href="#contato">Contato</a></li>
           <li>
-            <a href="https://github.com/ramosmat/" target="_blank">Dev →</a>
+            <a href="https://github.com/ramosmat/" target="_blank"
+              >Dev <span class="arrow-black"></span
+            ></a>
           </li>
           <li><a data-modal="abrir" href="">Login</a></li>
         </ul>
@@ -210,7 +212,7 @@
         <h1 class="titulo">FAQ</h1>
         <dl class="faq-lista" data-anime="accordion">
           <dt>Qual a idade dos animais?</dt>
-          <dd>
+          <dd class="idade">
             As raposas vermelhas vivem até 12 anos em seu habitat natural. A
             esperança de vida dos esquilos é muito variável. Cerca de um quinto
             dos membros de uma ninhada morre antes de atingir um ano de idade,
@@ -338,7 +340,7 @@
 
     <section class="modal-container" data-modal="container">
       <div class="modal">
-        <button data-modal="fechar" class="fechar">X</button>
+        <button data-modal="fechar" class="fechar"></button>
         <form action="">
           <label for="email">Email</label>
           <input type="text" for="email" id="email" />
